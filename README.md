@@ -3,24 +3,27 @@
 This repository contains the source code, testbenches, MATLAB generation scripts, and the Python golden model for the master's thesis project **"A 256-bit Hardware-Accelerated CRC-32C Verification Engine for High-Frequency Trading on HKEX"**. The design progresses through three architectural stages and is implemented on a Xilinx Artix-7 FPGA using Vivado.
 
 ## Directory Structure
-.
-├── CRC32_Verification.py # Python golden model for CRC-32C
-├── Parallel 32bit/ # 32-bit parallel CRC-32C core (baseline)
-│ ├── rtl/
-│ │ └── GenCRC32.v # Auto-generated 32-bit parallel core
-│ └── tb/
-│ └── crc_tb.v # Testbench for the 32-bit core
-├── Flat parallel 256bit/ # Single-cycle 256-bit parallel engine (non-pipelined)
-│ ├── GenCRC32_256.m # MATLAB script to generate the 256-bit core
-│ ├── constraints/ # XDC timing/physical constraints (100 MHz)
-│ ├── rtl/ # Verilog source files for the flat engine
-│ └── tb/ # Testbench for the 256-bit engine
-└── Pipelined (4 stages) parallel 256bit/ # 4-stage pipelined 256-bit CRC-32C engine
-├── Pipeline_try1.m # MATLAB script for pipeline design (64-bit core generation)
-├── constraints/ # XDC constraints (200 MHz target)
-├── rtl/ # Verilog sources: top (with VIO/ILA), pipeline core, 64-bit core
-└── tb/ # Testbench for the pipelined engine
-text
+### Root
+- **CRC32_Verification.py** — Python golden model for CRC-32C
+
+### Parallel 32bit
+32-bit parallel CRC-32C core (baseline).
+- **rtl/GenCRC32.v** — Auto-generated 32-bit parallel core
+- **tb/crc_tb.v** — Testbench for the 32-bit core
+
+### Flat parallel 256bit
+Single-cycle 256-bit parallel engine (non-pipelined).
+- **GenCRC32_256.m** — MATLAB script to generate the 256-bit core
+- **constraints/** — XDC timing/physical constraints (100 MHz)
+- **rtl/** — Verilog source files for the flat engine
+- **tb/** — Testbench for the 256-bit engine
+
+### Pipelined (4 stages) parallel 256bit
+4-stage pipelined 256-bit CRC-32C engine (final implementation).
+- **Pipeline_try1.m** — MATLAB script for pipeline design (64-bit core generation)
+- **constraints/** — XDC constraints (200 MHz target)
+- **rtl/** — Verilog sources: top (with VIO/ILA), pipeline core, 64-bit core
+- **tb/** — Testbench for the pipelined engine
 
 
 ## Folder & File Description
