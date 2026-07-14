@@ -20,6 +20,7 @@ This repository contains the source code, testbenches, MATLAB generation scripts
 ├── constraints/ # XDC constraints (200 MHz target)
 ├── rtl/ # Verilog sources: top (with VIO/ILA), pipeline core, 64-bit core
 └── tb/ # Testbench for the pipelined engine
+text
 
 
 ## Folder & File Description
